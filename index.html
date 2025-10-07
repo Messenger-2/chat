@@ -76,9 +76,6 @@
           <div style="font-size:13px;color:var(--muted)">Design</div>
           <button class="toggle" id="themeBtn">Dark / Light</button>
         </div>
-        <div class="info" style="margin-top:12px">
-          <div class="muted small">Admin Login: ADMIN / lucwag22,10</div>
-        </div>
       </div>
     </aside>
     <main class="messenger">
@@ -214,7 +211,8 @@
         const div = document.createElement('div');
         div.className = 'msg' + (m.pinned ? ' pinned' : '') + (m.sender === cur ? ' me' : '');
         const content = document.createElement('div');
-        content.innerHTML = `<div>${escapeHtml(m.text)}</div><div class="meta">${escapeHtml(m.sender)} • ${new Date(m.time).toLocaleString()} • IP: ${escapeHtml(m.ip||'—')}</div>`;
+        // IP WEGGEMACHT - nur noch Name und Zeit
+        content.innerHTML = `<div>${escapeHtml(m.text)}</div><div class="meta">${escapeHtml(m.sender)} • ${new Date(m.time).toLocaleString()}</div>`;
         div.appendChild(content);
 
         // controls BELOW the message
